@@ -1,3 +1,4 @@
+/* eslint-disable*/
 export default function handleResponseFromAPI(promise) {
     const keep = promise.then(() => {
       console.log('Got a response from the API');

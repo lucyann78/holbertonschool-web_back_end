@@ -1,4 +1,4 @@
-// 0-console.js
+/*eslint-disable*/
 function displayMessage(message) {
   console.log(message);
 }

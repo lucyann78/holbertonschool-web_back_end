@@ -12,13 +12,13 @@ const app = http.createServer(async (req, res) => {
   if (req.url === '/') {
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
-    res.write('This is the list of our students\n');
     try {
       if (!args[0]) throw new Error('Cannot load the database');
       const response = await countStudents(args[0]);
-      res.end(`${response.join('\n')}`);
+      const fullResponse = ['This is the list of our students', ...response].join('\n');
+      res.end(fullResponse);
     } catch (err) {
-      res.end(err.message);
+      res.end('This is the list of our students\n' + err.message);
     }
   } else {
     res.statusCode = 404;

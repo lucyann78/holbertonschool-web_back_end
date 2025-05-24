@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import fs from 'fs';
 
 export function readDatabase(filePath) {

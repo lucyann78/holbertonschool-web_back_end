@@ -16,8 +16,8 @@ const app = http.createServer(async (req, res) => {
     try {
       if (!args[0]) throw new Error('Cannot load the database');
       const response = await countStudents(args[0]);
-      const fullResponse = ['This is the list of our students', ...response].join('\n');
-      res.end(fullResponse);
+      // Send the full response in one res.end call
+      res.end(['This is the list of our students', ...response].join('\n'));
     } catch (err) {
       res.end('This is the list of our students\n' + err.message);
     }

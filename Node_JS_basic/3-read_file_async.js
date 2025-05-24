@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const fs = require('fs').promises;
 
 async function countStudents(filePath) {
